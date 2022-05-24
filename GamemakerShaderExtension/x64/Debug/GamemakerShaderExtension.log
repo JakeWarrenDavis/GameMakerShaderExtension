@@ -1,31 +1,5 @@
 ﻿  Manager.cpp
 C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\Manager.cpp(36,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  dllmain.cpp
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(24,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(24,22): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(30,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(36,26): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(44,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(51,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(51,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(51,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(58,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(58,47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(58,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(58,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(58,35): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(58,31): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(58,26): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(64,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(64,34): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(69,45): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(69,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(69,37): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(69,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(74,49): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(74,40): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\GamemakerShaderExtension\dllmain.cpp(74,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
   LINK : C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\x64\Debug\GamemakerShaderExtension.dll not found or not built by the last incremental link; performing full link
      Creating library C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\x64\Debug\GamemakerShaderExtension.lib and object C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\x64\Debug\GamemakerShaderExtension.exp
   GamemakerShaderExtension.vcxproj -> C:\Users\Jake\Desktop\GamemakerShaderExtension\GamemakerShaderExtension\x64\Debug\GamemakerShaderExtension.dll

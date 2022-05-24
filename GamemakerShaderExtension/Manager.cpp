@@ -187,6 +187,9 @@ void Manager::recreateTexture(int _id)
 
 	if (texture)
 	{
+		texture->shaderResourceView->Release();
+		texture->texture->Release();
+
 		D3D11_SUBRESOURCE_DATA initData;
 		initData.pSysMem = (void*)texture->textureData;
 		initData.SysMemPitch = texture->width * texture->components * sizeof(float);
