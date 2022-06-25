@@ -159,7 +159,7 @@ void Manager::deleteTexture(int _id)
 void Manager::updateTexture(int _id)
 {
 	TextureHolder* texture = findTexture(_id);
-
+	
 	if (texture)
 	{
 		//Update the texture.
