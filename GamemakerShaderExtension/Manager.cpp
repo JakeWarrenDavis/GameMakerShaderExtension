@@ -23,6 +23,7 @@ Manager::~Manager()
 
 int Manager::createTexture(int _width, int _height, int _value)
 {
+	HRESULT hr;
 	TextureHolder* texture = new TextureHolder();
 	texture->width = (int)_width;
 	texture->height = (int)_height;
@@ -50,13 +51,19 @@ int Manager::createTexture(int _width, int _height, int _value)
 	desc.Usage = D3D11_USAGE_IMMUTABLE;
 	desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 
-	device->CreateTexture2D(&desc, &initData, &texture->texture);
+	hr = device->CreateTexture2D(&desc, &initData, &texture->texture);
+
+	if (FAILED(hr))
+	{
+		//Lmao get fucked.
+		MessageBoxA(NULL, "Couldn't create the texture file upon creation", NULL, MB_OK);
+	}
 
 	D3D11_SHADER_RESOURCE_VIEW_DESC SRVDesc = {};
 	SRVDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
 	SRVDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
 	SRVDesc.Texture2D.MipLevels = 1;
-	HRESULT hr;
+	
 	hr = device->CreateShaderResourceView(texture->texture, &SRVDesc, &texture->shaderResourceView);
 
 	if (FAILED(hr))
@@ -189,6 +196,7 @@ void Manager::recreateTexture(int _id)
 	{
 		texture->shaderResourceView->Release();
 		texture->texture->Release();
+		HRESULT hr;
 
 		D3D11_SUBRESOURCE_DATA initData;
 		initData.pSysMem = (void*)texture->textureData;
@@ -204,19 +212,24 @@ void Manager::recreateTexture(int _id)
 		desc.Usage = D3D11_USAGE_IMMUTABLE;
 		desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 
-		device->CreateTexture2D(&desc, &initData, &texture->texture);
+		hr = device->CreateTexture2D(&desc, &initData, &texture->texture);
+
+		if (FAILED(hr))
+		{
+			//Lmao get fucked.
+			MessageBoxA(NULL, "Couldn't create the texture in recreation", NULL, MB_OK);
+		}
 
 		D3D11_SHADER_RESOURCE_VIEW_DESC SRVDesc = {};
 		SRVDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
 		SRVDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
 		SRVDesc.Texture2D.MipLevels = 1;
-		HRESULT hr;
 		hr = device->CreateShaderResourceView(texture->texture, &SRVDesc, &texture->shaderResourceView);
 
 		if (FAILED(hr))
 		{
 			//Lmao get fucked.
-			MessageBoxA(NULL, "Couldn't create shader resource view", NULL, MB_OK);
+			MessageBoxA(NULL, "Couldn't create shader resource view upon recreation", NULL, MB_OK);
 		}
 	}
 }
