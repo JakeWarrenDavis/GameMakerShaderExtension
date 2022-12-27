@@ -36,5 +36,7 @@ public:
 	void updateTexture(int _id);
 	void clearResources(int _slot); //Free up a SRV slot, not sure if its nessecary, but just in case it crashes if you delete a texture's srv that is currently in use.
 	void recreateTexture(int _id);
+	void setSurface(int _slot, void* _surfacePointer, int _width, int _height);
+	void copy_surface_to_texture(int _id, void* _data);
 };
 

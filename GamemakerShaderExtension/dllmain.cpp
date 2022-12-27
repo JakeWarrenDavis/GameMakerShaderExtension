@@ -6,11 +6,7 @@
 
 #define GMEXPORT extern "C" __declspec(dllexport)
 
-
-
-
 Manager* manager;
-
 
 GMEXPORT double shader_set_device(void* _device, void* _deviceContext)
 {
@@ -77,5 +73,17 @@ GMEXPORT double shader_create_vertex_texture(double _width, double _height, doub
 GMEXPORT double shader_clear_memory()
 {
 	manager->~Manager();
+	return 1.0;
+}
+
+GMEXPORT double shader_set_surface(double _slot, void* _surfacePointer, double _width, double _height)
+{
+	manager->setSurface(_slot, _surfacePointer, _width, _height);
+	return 1.0;
+}
+
+GMEXPORT double shader_copy_surface_to_texture(double _textureID, void* _data)
+{
+	manager->copy_surface_to_texture(_textureID, _data);
 	return 1.0;
 }

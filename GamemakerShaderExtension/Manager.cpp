@@ -220,3 +220,62 @@ void Manager::recreateTexture(int _id)
 		}
 	}
 }
+
+void Manager::setSurface(int _slot, void* _surfacePointer, int _width, int _height)
+{
+	ID3D11Texture2D* surfaceTexture = (ID3D11Texture2D*)_surfacePointer;
+	ID3D11ShaderResourceView* _srv;
+
+	D3D11_SHADER_RESOURCE_VIEW_DESC SRVDesc = {};
+	SRVDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
+	SRVDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
+	SRVDesc.Texture2D.MipLevels = 1;
+	HRESULT hr;
+	hr = device->CreateShaderResourceView(surfaceTexture, &SRVDesc, &_srv);
+
+	context->VSSetShaderResources(_slot, 1, &_srv);
+
+	//_srv->Release();
+
+
+}
+
+void Manager::copy_surface_to_texture(int _id, void* _data)
+{
+	TextureHolder* texture = findTexture(_id);
+
+	if (texture)
+	{
+		texture->shaderResourceView->Release();
+		texture->texture->Release();
+
+		D3D11_SUBRESOURCE_DATA initData;
+		initData.pSysMem = _data;
+		initData.SysMemPitch = texture->width * texture->components * sizeof(float);
+		initData.SysMemSlicePitch = NULL;
+
+		D3D11_TEXTURE2D_DESC desc = {};
+		desc.Width = texture->width;
+		desc.Height = texture->height;
+		desc.MipLevels = desc.ArraySize = 1;
+		desc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
+		desc.SampleDesc.Count = 1;
+		desc.Usage = D3D11_USAGE_IMMUTABLE;
+		desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
+
+		device->CreateTexture2D(&desc, &initData, &texture->texture);
+
+		D3D11_SHADER_RESOURCE_VIEW_DESC SRVDesc = {};
+		SRVDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
+		SRVDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
+		SRVDesc.Texture2D.MipLevels = 1;
+		HRESULT hr;
+		hr = device->CreateShaderResourceView(texture->texture, &SRVDesc, &texture->shaderResourceView);
+
+		if (FAILED(hr))
+		{
+			//Lmao get fucked.
+			MessageBoxA(NULL, "Couldn't create shader resource view", NULL, MB_OK);
+		}
+	}
+}
